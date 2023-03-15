@@ -1,0 +1,23 @@
+<div style="display: flex;flex-direction: column;height: 400px;width: 500px;margin: 20px;">
+  <p>เพื่มสถานที่ท่องเที่ยวใหม่</p>
+  <label>ชื่อสถานที่</label>
+  <input type="text" name="name" #name>
+  <label>รายละเอียดสถานที่</label>
+  <textarea name="detail" id="" cols="30" rows="10" #detail>
+
+  </textarea>
+  <label >URL รูปภาพสถานที่</label>
+  <input type="url" name="url" #url>
+  <label>เลือกประเทศ</label>
+  <select name="country" #country>
+    <option *ngFor="let country of countries" value="{{country.idx}}">
+          {{country.name}}
+    </option>
+
+    <!-- <option value="1" selected>ประเทศไทย</option>
+    <option value="2">ญี่ปุ่น</option>
+    <option value="3">เนเธอร์แลนด์</option> -->
+  </select>
+  <button (click)="addNew(name.value,detail.value,url.value,+country.value)">Add</button>
+  <button (click)="close()">Close</button>
+</div>
